@@ -23,8 +23,8 @@ class CreateTransaksiDetailTable extends Migration
             $table->integer('total_price');
             $table->timestamps();
 
-            $table->foreign('transaksi_id')->references('id')->on('transaksi');
-            $table->foreign('buku_id')->references('id')->on('buku');
+            $table->foreign('transaksi_id')->references('id')->on('transaksi')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('buku_id')->references('id')->on('buku')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

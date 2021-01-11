@@ -10,4 +10,8 @@ class Transaksi extends Model
     protected $fillable = [
         'buyer_name', 'buyer_phone', 'total'
     ];
+    public function transaksi_detail()
+    {
+        return $this->hasMany('App\TransaksiDetail');
+    }
 }
